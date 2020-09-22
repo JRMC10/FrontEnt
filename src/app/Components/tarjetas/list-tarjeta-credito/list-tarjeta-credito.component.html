@@ -1,0 +1,68 @@
+
+  <!--Input para filtrar en la Tabla-->
+  <mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="buscar">
+  </mat-form-field>
+
+  <!--Boton pata actualizar la tabla-->
+  <button class="mr-1" mat-icon-button color="primary" (click)="obtenerTarjeta()">
+    <mat-icon>autorenew</mat-icon>
+</button>
+      
+<!--Se declara la tabla y el datasource-->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  
+      <ng-container matColumnDef="titular">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> titular </th>
+        <td mat-cell *matCellDef="let tarjeta">{{ tarjeta.titular }}</td>
+      </ng-container>
+      
+  
+      <ng-container matColumnDef="numeroTarjeta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > numeroTarjeta </th>
+        <td mat-cell *matCellDef="let tarjeta"> {{ tarjeta.numeroTarjeta }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fechaExpiracion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> fechaExpiracion </th>
+        <td mat-cell *matCellDef="let tarjeta"> {{ tarjeta.fechaExpiracion }}</td>
+      </ng-container>
+    
+    <ng-container matColumnDef="Acciones">
+      <th mat-header-cell *matHeaderCellDef >Acciones</th>
+      <td mat-cell *matCellDef="let tarjeta">
+        <button class="mr-1" mat-icon-button color="primary" (click)="editar(tarjeta)">
+          <mat-icon>edit</mat-icon>
+          </button>
+          <button class="mr-1" mat-icon-button color="warn" (click)="eliminarTarjeta(tarjeta.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+  </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  
+
+
+<!--<table class="table table-sm">
+    <tr *ngFor="let tarjeta of tarjetaService.list">
+       <td>{{ tarjeta.titular }}</td> 
+       <td>{{ tarjeta.numeroTarjeta }}</td> 
+       <td>{{ tarjeta.fechaExpiracion }}</td> 
+       <td>
+           
+           <i class="far fa-edit fa-lg text-info" (click)="editar(tarjeta)" style="cursor: pointer;"></i>
+       </td>
+       <td>
+        <i class="far fa-trash-alt fa-lg text-danger" (click)="eliminarTarjeta(tarjeta.id)" style="cursor: pointer;"></i>
+    
+    </td>
+    </tr>
+</table>-->
+
+

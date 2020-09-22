@@ -1,0 +1,17 @@
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+input.ng-touched.ng-invalid { /*si es tocado el campo y no es correcto se pone en rojo*/
+    border-color: #dc3545;
+}
+input.ng-valid { /*si es valido el form se pone en verde*/
+    border-color: #28a745;
+}
+
+.green-icon{
+    color: #28a745;
+}
+
+.red-icon{
+    color: #dc3545;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
