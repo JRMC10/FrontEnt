@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Observable} from 'rxjs';
 
+
 @Component({
   selector: 'app-tarjeta-credito',
   templateUrl: './tarjeta-credito.component.html',
@@ -30,6 +31,7 @@ export class TarjetaCreditoComponent implements OnInit, OnDestroy {
       cvv: ['', [Validators.required, Validators.maxLength(3), Validators.minLength(3)]],
     })
   }
+
 
 
   /*Obtiene los datos de cada tarjeta y lo pasa al formulario para editarlo */

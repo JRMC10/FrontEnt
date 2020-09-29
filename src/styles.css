@@ -1,10 +1,17 @@
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-input.ng-touched.ng-invalid { /*si es tocado el campo y no es correcto se pone en rojo*/
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/*input.ng-touched.ng-invalid { /*si es tocado el campo y no es correcto se pone en rojo
     border-color: #dc3545;
 }
-input.ng-valid { /*si es valido el form se pone en verde*/
+input.ng-valid { /*si es valido el form se pone en verde
     border-color: #28a745;
 }
+
+ mat-icon {  
+     color: #dc3545; 
+
+} 
+
 
 .green-icon{
     color: #28a745;
@@ -12,6 +19,10 @@ input.ng-valid { /*si es valido el form se pone en verde*/
 
 .red-icon{
     color: #dc3545;
+}*/
+
+input #titu.valid {
+    color: green;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
