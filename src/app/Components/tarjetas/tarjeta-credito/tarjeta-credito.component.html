@@ -1,31 +1,40 @@
 
     <form [formGroup]= "form" (ngSubmit) = "guardarTarjeta()" novalidate>
-        <mat-form-field class="d-block">
 
+        <mat-form-field class="d-block">
             <input matInput type="text" formControlName="titular"  placeholder="Titular" required >
             <mat-error *ngIf="this.form.get('titular').invalid && this.form.get('titular').touched" >
                 Ingresa El Nombre del <strong>Titular</strong>
              </mat-error>
-<!-- ya solo falta en la condicion or que cada condicion tenga su color-->
              <mat-icon matSuffix *ngIf="this.form.get('titular').invalid && this.form.get('titular').touched" style="color: red">account_circle</mat-icon>
              <mat-icon matSuffix *ngIf="(this.form.get('titular').valid )  || (this.form.get('titular').untouched )" style="color: green" >account_circle</mat-icon>
-             
           </mat-form-field>
 
           <mat-form-field class="d-block">
             <input matInput type="text" placeholder="numeroTarjeta" formControlName="numeroTarjeta" maxlength="16" required>
-            <mat-icon matSuffix>credit_card</mat-icon>
-            
+            <mat-error *ngIf="this.form.get('numeroTarjeta').invalid && this.form.get('numeroTarjeta').touched" >
+                Ingresa El Numero de Tarjeta del <strong>Titular</strong>
+             </mat-error>
+             <mat-icon matSuffix *ngIf="this.form.get('numeroTarjeta').invalid && this.form.get('numeroTarjeta').touched" style="color: red">credit_card</mat-icon>
+             <mat-icon matSuffix *ngIf="(this.form.get('numeroTarjeta').valid )  || (this.form.get('numeroTarjeta').untouched )" style="color: green" >credit_card</mat-icon>
           </mat-form-field>
 
           <mat-form-field class="d-block">
             <input matInput type="text" placeholder="fechaExpiracion" formControlName="fechaExpiracion" maxlength="5" placeholder="MM/YY">
-            <mat-icon matSuffix>calendar_today</mat-icon>
+            <mat-error *ngIf="this.form.get('fechaExpiracion').invalid && this.form.get('fechaExpiracion').touched" >
+                Ingresa La Fecha de Expiración
+             </mat-error>
+             <mat-icon matSuffix *ngIf="this.form.get('fechaExpiracion').invalid && this.form.get('fechaExpiracion').touched" style="color: red">calendar_today</mat-icon>
+             <mat-icon matSuffix *ngIf="(this.form.get('fechaExpiracion').valid )  || (this.form.get('fechaExpiracion').untouched )" style="color: green" >calendar_today</mat-icon>
           </mat-form-field>
 
           <mat-form-field class="d-block">
             <input matInput type="text" placeholder="cvv" formControlName="cvv" maxlength="3" placeholder="123">
-            <mat-icon matSuffix>vpn_key</mat-icon>
+            <mat-error *ngIf="this.form.get('cvv').invalid && this.form.get('cvv').touched" >
+                Ingresa El Codigo
+             </mat-error>
+             <mat-icon matSuffix *ngIf="this.form.get('cvv').invalid && this.form.get('cvv').touched" style="color: red">vpn_key</mat-icon>
+             <mat-icon matSuffix *ngIf="(this.form.get('cvv').valid )  || (this.form.get('cvv').untouched )" style="color: green" >vpn_key</mat-icon>
           </mat-form-field>
 
           <div class="form-group">
